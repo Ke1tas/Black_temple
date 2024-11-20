@@ -1,0 +1,325 @@
+<html>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
+        rel="stylesheet" 
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" 
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    </head>
+    <title>
+        Список фильмов
+    </title>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Райан Гослинг</a>
+                <button class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav"
+                        aria-controls="navbarNav"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="info.html">Основная информация</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="films.html">Список фильмов</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- <div class="container mt-4">
+            <div class="alert alert-warning" role="alert">
+                Данная страница находится в разработке!
+            </div> 
+        </div> -->
+        <div class="container mt-5">
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <h2>Райан Гослинг</h2>
+                    <p><strong>Дата рождения:</strong> 12 ноября 1980</p>
+                    <p><strong>Возраст:</strong> 44 года</p>
+                    <p><strong>Фильмы:</strong> 28</p>
+                    <p><strong>Жанры:</strong> драма, триллер, комедия</p>
+                </div>
+                <div class="col-md-6 text-center hide_img">
+                    <img src="ryan_img.png" alt="Райан Гослинг" class="img-fluid">
+                </div>
+            </div>
+
+            <h3>Дополнительная информация</h3>
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <p><strong>Полное имя:</strong> Райан Томас Гослинг</p>
+                    <p><strong>Фильм, за который получил Глобус:</strong> "Ла-Ла-Ленд"</p>
+                    
+                </div>
+                <div class="col-md-6">
+
+                    <p><strong>Интересный факт:</strong> Райан Гослинг не ведет социальные сети</p>
+                    <p><strong>Любимое блюдо:</strong> Рисовый пуддинг</p>
+                </div>
+            </div>
+
+            <h2>Лучшие фильмы</h2>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="card text-center">
+                        <img src="film_img1.jpg" class="card-img-top" alt="Драйв">
+                        <div class="card-body">
+                            <h5 class="card-title">Драйв</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card text-center">
+                        <img src="film_img2.jpg" class="card-img-top" alt="Бегущий по лезвию 2049">
+                        <div class="card-body">
+                            <h5 class="card-title">Бегущий по лезвию 2049</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card text-center">
+                        <img src="film_img4.jpg" class="card-img-top" alt="Ла-Ла-Ленд">
+                        <div class="card-body">
+                            <h5 class="card-title">Ла-Ла-Ленд</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card text-center">
+                        <img src="film_img5.jpg" class="card-img-top" alt="Место под соснами">
+                        <div class="card-body">
+                            <h5 class="card-title">Место под соснами</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card text-center">
+                        <img src="film_img6.jpg" class="card-img-top" alt="Барби">
+                        <div class="card-body">
+                            <h5 class="card-title">Барби</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card text-center">
+                        <img src="film_img7.jpg" class="card-img-top" alt="Славные парни">
+                        <div class="card-body">
+                            <h5 class="card-title">Славные парни</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card text-center">
+                        <img src="film_img8.jpg" class="card-img-top" alt="Каскадёры">
+                        <div class="card-body">
+                            <h5 class="card-title">Каскадёры</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card text-center">
+                        <img src="film_img9.jpg" class="card-img-top" alt="Дневник памяти">
+                        <div class="card-body">
+                            <h5 class="card-title">Дневник памяти</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2>Фильмография</h2>
+            <div class="table-responsive">
+                <table class="table table-striped text-center">
+                    <thead>
+                        <tr>
+                            <th>Год</th>
+                            <th>Русское название</th>
+                            <th>Оригинальное название</th>
+                            <th>Роль</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1996</td>
+                            <td>Франкенштейн и я</td>
+                            <td>Frankenstein and Me</td>
+                            <td>Кенни</td>
+                        </tr>
+                        <tr>
+                            <td>2000</td>
+                            <td>Вспоминая Титанов</td>
+                            <td>Remember the Titans</td>
+                            <td>Алан Босли</td>
+                        </tr>
+                        <tr>
+                            <td>2001</td>
+                            <td>Фанатик</td>
+                            <td>The Believer</td>
+                            <td>Дэнни Балинт</td>
+                        </tr>
+                        <tr>
+                            <td>2002</td>
+                            <td>Закон бойни</td>
+                            <td>The Slaughter Rule</td>
+                            <td>Рой Чатни</td>
+                        </tr>
+                        <tr>
+                            <td>2002</td>
+                            <td>Отсчёт убийств</td>
+                            <td>Murder by Numbers</td>
+                            <td>Ричард Хейвуд</td>
+                        </tr>
+                        <tr>
+                            <td>2003</td>
+                            <td>Соединённые штаты Лиланда</td>
+                            <td>The United States of Leland</td>
+                            <td>Лиланд Фицджеральд</td>
+                        </tr>
+                        <tr>
+                            <td>2004</td>
+                            <td>Дневник памяти</td>
+                            <td>The Notebook</td>
+                            <td>Ноа Кэлхун</td>
+                        </tr>
+                        <tr>
+                            <td>2005</td>
+                            <td>Останься</td>
+                            <td>Stay</td>
+                            <td>Генри Литем</td>
+                        </tr>
+                        <tr>
+                            <td>2006</td>
+                            <td>Полу-Нельсон</td>
+                            <td>Half Nelson</td>
+                            <td>Дэн Данн</td>
+                        </tr>
+                        <tr>
+                            <td>2007</td>
+                            <td>Перелом</td>
+                            <td>Fracture</td>
+                            <td>Уилли Бичум</td>
+                        </tr>
+                        <tr>
+                            <td>2007</td>
+                            <td>Ларс и настоящая девушка</td>
+                            <td>Lars and the Real Girl</td>
+                            <td>Ларс Линдстром</td>
+                        </tr>
+                        <tr>
+                            <td>2010</td>
+                            <td>Валентинка</td>
+                            <td>Blue Valentine</td>
+                            <td>Дин</td>
+                        </tr>
+                        <tr>
+                            <td>2010</td>
+                            <td>Всё самое лучшее</td>
+                            <td>All Good Things</td>
+                            <td>Дэвид Маркс</td>
+                        </tr>
+                        <tr>
+                            <td>2011</td>
+                            <td>Драйв</td>
+                            <td>Drive</td>
+                            <td>Водитель</td>
+                        </tr>
+                        <tr>
+                            <td>2011</td>
+                            <td>Эта дурацкая любовь</td>
+                            <td>Crazy, Stupid, Love</td>
+                            <td>Джейкоб Палмер</td>
+                        </tr>
+                        <tr>
+                            <td>2011</td>
+                            <td>Мартовские иды</td>
+                            <td>The Ides of March</td>
+                            <td>Стивен Майерс</td>
+                        </tr>
+                        <tr>
+                            <td>2012</td>
+                            <td>Место под соснами</td>
+                            <td>The Place Beyond the Pines</td>
+                            <td>Люк Глэнтон</td>
+                        </tr>
+                        <tr>
+                            <td>2013</td>
+                            <td>Охотники на гангстеров</td>
+                            <td>Gangster Squad</td>
+                            <td>сержант Джерри Вутерс</td>
+                        </tr>
+                        <tr>
+                            <td>2013</td>
+                            <td>Только Бог простит</td>
+                            <td>Only God Forgives</td>
+                            <td>Джулиан</td>
+                        </tr>
+                        <tr>
+                            <td>2015</td>
+                            <td>Игра на понижение</td>
+                            <td>The Big Short</td>
+                            <td>	Джаред Веннетт</td>
+                        </tr>
+                        <tr>
+                            <td>2016</td>
+                            <td>Славные парни</td>
+                            <td>The Nice Guys</td>
+                            <td>Холланд Марч</td>
+                        </tr>
+                        <tr>
+                            <td>2016</td>
+                            <td>Ла-Ла Ленд</td>
+                            <td>La La Land</td>
+                            <td>Себастьян Уайлдер</td>
+                        </tr>
+                        <tr>
+                            <td>2017</td>
+                            <td>Между нами музыка</td>
+                            <td>Song to Song</td>
+                            <td>Би Ви</td>
+                        </tr>
+                        <tr>
+                        <tr>
+                            <td>2017</td>
+                            <td>Бегущий по лезвию 2049</td>
+                            <td>Blade Runner 2049</td>
+                            <td>Кей</td>
+                        </tr>
+                        <tr>
+                            <td>2018</td>
+                            <td>Человек на Луне</td>
+                            <td>First Man</td>
+                            <td>Нил Армстронг</td>
+                        </tr>
+                        <tr>
+                            <td>2022</td>
+                            <td>Серый человек</td>
+                            <td>The Gray Man</td>
+                            <td>Курт Джентри/Сьерра Сикс</td>
+                        </tr>
+                        <tr>
+                            <td>2023</td>
+                            <td>Барби</td>
+                            <td>Barbie</td>
+                            <td>Кен</td>
+                        </tr>
+                        <tr>
+                            <td>2024</td>
+                            <td>Каскадёры</td>
+                            <td>The Fall Guy</td>
+                            <td>Кольт</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
