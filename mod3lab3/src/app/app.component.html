@@ -1,0 +1,16 @@
+<div>
+  <label>Представьтесь, пожалуйста!!!ʕ ᵔᴥᵔ ʔ</label>
+  <input [(ngModel)]="userName"/>
+</div>
+
+<div>
+  <button (click)="setGreeting()">Скажи "Привет"</button>
+</div>
+<p appItalic>УАААААА КУРСИВНЫЙ ТЕКСТ</p>
+
+<nav>
+  <a routerLink="/page-one">Страница 1</a>
+  <a routerLink="page-two/:id">Страница 2</a>
+  <a routerLink="/page-three">Страница 3</a>
+</nav>
+<router-outlet></router-outlet>
