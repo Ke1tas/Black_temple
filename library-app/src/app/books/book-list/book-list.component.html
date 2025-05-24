@@ -1,0 +1,40 @@
+<div class="container mt-4">
+  <h2>Список книг</h2>
+  <button class="btn btn-primary mb-3" (click)="addBook()">Добавить книгу</button>
+  
+  <div class="table-responsive">
+    <table class="table table-striped table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th>Название</th>
+          <th>Год издания</th>
+          <th>Жанр</th>
+          <th>Статус</th>
+          <th>Дата добавления</th>
+          <th>Действия</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let book of books">
+          <td>{{ book.title }}</td>
+          <td>{{ book.publicationYear }}</td>
+          <td>{{ book.genre }}</td>
+          <td>
+            <span class="badge" [ngClass]="book.isAvailable ? 'bg-success' : 'bg-danger'">
+              {{ book.isAvailable ? 'Доступна' : 'На руках' }}
+            </span>
+          </td>
+          <td>{{ book.addedDate | date:'dd.MM.yyyy' }}</td>
+          <td>
+            <button class="btn btn-sm btn-warning me-2" (click)="editBook(book.id)">
+              Редактировать
+            </button>
+            <button class="btn btn-sm btn-danger" (click)="deleteBook(book.id)">
+              Удалить
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
