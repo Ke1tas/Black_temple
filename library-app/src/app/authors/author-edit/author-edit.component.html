@@ -1,1 +1,80 @@
-<p>author-edit works!</p>
+<div class="container mt-4">
+    <div class="card">
+      <div class="card-header bg-dark text-white">
+        {{ isNewAuthor ? 'Добавить нового автора' : 'Редактировать автора' }}
+      </div>
+      <div class="card-body">
+        <form [formGroup]="authorForm" (ngSubmit)="onSubmit()">
+          <div class="mb-3">
+            <label for="name" class="form-label">Имя автора</label>
+            <input type="text" class="form-control" id="name" formControlName="name"
+                   [ngClass]="{ 'is-invalid': authorForm.get('name')?.invalid && authorForm.get('name')?.touched }">
+            <div *ngIf="authorForm.get('name')?.invalid && authorForm.get('name')?.touched" 
+                 class="invalid-feedback">
+              <div *ngIf="authorForm.get('name')?.errors?.['required']">
+                Имя обязательно
+              </div>
+              <div *ngIf="authorForm.get('name')?.errors?.['minlength']">
+                Минимум 3 символа
+              </div>
+            </div>
+          </div>
+  
+          <div class="mb-3">
+            <label for="birthDate" class="form-label">Дата рождения</label>
+            <input type="date" class="form-control" id="birthDate" formControlName="birthDate"
+                   [ngClass]="{ 'is-invalid': authorForm.get('birthDate')?.invalid && authorForm.get('birthDate')?.touched }">
+            <div *ngIf="authorForm.get('birthDate')?.invalid && authorForm.get('birthDate')?.touched" 
+                 class="invalid-feedback">
+              Укажите дату рождения
+            </div>
+          </div>
+  
+          <div class="mb-3">
+            <label for="country" class="form-label">Страна</label>
+            <select class="form-select" id="country" formControlName="country"
+                    [ngClass]="{ 'is-invalid': authorForm.get('country')?.invalid && authorForm.get('country')?.touched }">
+              <option value="">Выберите страну...</option>
+              <option *ngFor="let country of countries" [value]="country">{{ country }}</option>
+            </select>
+            <div *ngIf="authorForm.get('country')?.invalid && authorForm.get('country')?.touched" 
+                 class="invalid-feedback">
+              Выберите страну
+            </div>
+          </div>
+  
+          <div class="mb-3">
+            <label for="biography" class="form-label">Биография</label>
+            <textarea class="form-control" id="biography" rows="5" formControlName="biography"
+                      [ngClass]="{ 'is-invalid': authorForm.get('biography')?.invalid && authorForm.get('biography')?.touched }"></textarea>
+            <div *ngIf="authorForm.get('biography')?.invalid && authorForm.get('biography')?.touched" 
+                 class="invalid-feedback">
+              <div *ngIf="authorForm.get('biography')?.errors?.['required']">
+                Биография обязательна
+              </div>
+              <div *ngIf="authorForm.get('biography')?.errors?.['minlength']">
+                Минимум 20 символов
+              </div>
+            </div>
+          </div>
+  
+          <div class="mb-3">
+            <label for="booksWritten" class="form-label">Количество книг</label>
+            <input type="number" class="form-control" id="booksWritten" formControlName="booksWritten"
+                   [ngClass]="{ 'is-invalid': authorForm.get('booksWritten')?.invalid && authorForm.get('booksWritten')?.touched }">
+            <div *ngIf="authorForm.get('booksWritten')?.invalid && authorForm.get('booksWritten')?.touched" 
+                 class="invalid-feedback">
+              Укажите число ≥ 0
+            </div>
+          </div>
+  
+          <div class="d-flex justify-content-end gap-2">
+            <button type="button" class="btn btn-secondary" (click)="onCancel()">Отмена</button>
+            <button type="submit" class="btn btn-primary" [disabled]="authorForm.invalid">
+              {{ isNewAuthor ? 'Добавить' : 'Сохранить' }}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
