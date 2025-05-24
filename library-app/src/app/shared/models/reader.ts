@@ -1,8 +1,10 @@
 export interface Reader {
-    id: number;
-    name: string;
-    libraryCardNumber: string;
-    email: string;
-    registrationDate: Date;
-    isActive: boolean;
-  }
+  id: number;
+  fullName: string;
+  email: string;
+  registrationDate: Date;
+  isActive: boolean;
+  booksBorrowed: number;
+  phone?: string;
+  address?: string;
+}
