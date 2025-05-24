@@ -1,1 +1,107 @@
-<p>reader-list works!</p>
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h2 class="mb-0">Читатели</h2>
+      <button class="btn btn-primary" (click)="addReader()">
+        <i class="bi bi-plus-circle me-1"></i>Добавить читателя
+      </button>
+    </div>
+  
+    <div class="card shadow-sm">
+      <div class="table-responsive">
+        <table class="table table-hover mb-0">
+          <thead class="table-light">
+            <tr>
+              <th class="ps-4">ФИО</th>
+              <th>Email</th>
+              <th>Дата регистрации</th>
+              <th>Статус</th>
+              <th>Книг</th>
+              <th class="text-end pe-4">Действия</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let reader of readers" class="align-middle">
+              <td class="ps-4 fw-medium">{{ reader.fullName }}</td>
+              <td>{{ reader.email }}</td>
+              <td>{{ reader.registrationDate | date:'dd.MM.yyyy' }}</td>
+              <td>
+                <span class="badge" [ngClass]="reader.isActive ? 'bg-success' : 'bg-secondary'">
+                  {{ reader.isActive ? 'Активен' : 'Неактивен' }}
+                </span>
+              </td>
+              <td>
+                <span class="badge bg-primary">{{ reader.booksBorrowed }}</span>
+              </td>
+              <td class="text-end pe-4">
+                <div class="btn-group btn-group-sm">
+                  <button class="btn btn-outline-info" 
+                          (click)="showDetails(detailsModal, reader)">
+                    <i class="bi bi-info-circle"></i>
+                  </button>
+                  <button class="btn btn-outline-warning" 
+                          (click)="editReader(reader.id)">
+                    <i class="bi bi-pencil"></i>
+                  </button>
+                  <button class="btn btn-outline-danger" 
+                          (click)="deleteReader(reader.id)">
+                    <i class="bi bi-trash"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
+  <ng-template #detailsModal let-modal>
+    <div class="modal-header">
+      <h5 class="modal-title">Подробности читателя</h5>
+      <button type="button" class="btn-close" (click)="modal.dismiss()"></button>
+    </div>
+    <div class="modal-body">
+      <h6 class="mb-3">{{ selectedReader?.fullName }}</h6>
+      
+      <div class="row mb-2">
+        <div class="col-6">
+          <small class="text-muted">Email:</small>
+          <p>{{ selectedReader?.email }}</p>
+        </div>
+        <div class="col-6">
+          <small class="text-muted">Телефон:</small>
+          <p>{{ selectedReader?.phone || 'не указан' }}</p>
+        </div>
+      </div>
+  
+      <div class="row mb-2">
+        <div class="col-6">
+          <small class="text-muted">Дата регистрации:</small>
+          <p>{{ selectedReader?.registrationDate | date:'dd.MM.yyyy' }}</p>
+        </div>
+        <div class="col-6">
+          <small class="text-muted">Книг на руках:</small>
+          <p>
+            <span class="badge bg-primary">{{ selectedReader?.booksBorrowed }}</span>
+          </p>
+        </div>
+      </div>
+  
+      <div *ngIf="selectedReader?.address" class="mb-2">
+        <small class="text-muted">Адрес:</small>
+        <p>{{ selectedReader?.address }}</p>
+      </div>
+  
+      <div class="mb-2">
+        <small class="text-muted">Статус:</small>
+        <p>
+          <span class="badge" [ngClass]="selectedReader?.isActive ? 'bg-success' : 'bg-secondary'">
+            {{ selectedReader?.isActive ? 'Активен' : 'Неактивен' }}
+          </span>
+        </p>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="modal.close()">Закрыть</button>
+    </div>
+  </ng-template>
